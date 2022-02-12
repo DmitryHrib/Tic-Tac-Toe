@@ -1,0 +1,106 @@
+/* merriweather-regular - latin */
+@font-face {
+    font-family: 'Merriweather';
+    font-style: normal;
+    font-weight: 400;
+    src: local(''),
+         url('../fonts/merriweather-v28-latin-regular.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+         url('../fonts/merriweather-v28-latin-regular.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+  }
+  /* merriweather-700 - latin */
+  @font-face {
+    font-family: 'Merriweather';
+    font-style: normal;
+    font-weight: 700;
+    src: local(''),
+         url('../fonts/merriweather-v28-latin-700.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+         url('../fonts/merriweather-v28-latin-700.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+  }
+  /* inter-regular - latin */
+@font-face {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    src: local(''),
+         url('../fonts/inter-v7-latin-regular.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+         url('../fonts/inter-v7-latin-regular.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+  }
+  /* inter-700 - latin */
+  @font-face {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    src: local(''),
+         url('../fonts/inter-v7-latin-700.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+         url('../fonts/inter-v7-latin-700.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+  }
+html {
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+*, *::before, ::after {
+    box-sizing: border-box;
+  }
+body {
+  background-color: #1a191f;
+  font-family: Inter;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 20px;
+  line-height: 1.2;
+  color: black;
+}
+/* Header styles start */
+
+/* Footer styles start */
+.footer {
+    background-color: black;
+    width: 100%;
+    position: fixed;
+    top: calc(100% - 100px);
+  }
+  .footer-container {   
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100px;
+    max-width: 1440px;
+    margin: 0 auto;
+    color: white;
+    padding: 5px 30px;
+  }
+  .footer-number {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    font-family: Inter;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 40px;
+  }
+  .footer-git:hover {
+    transform: scale(1.2);
+    transition: 0.9s;
+  }
+  .footer-git-text {
+    color: white;
+    text-decoration: none;
+  }
+  .footer-git-text:hover {
+    transform: scale(1.2);
+    transition: 1s;
+    color: #BDAE82;  
+  }
+  .footer-rss {
+    width: 200px;
+    height: 70px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-image: url(../img/svg/rss.svg);
+  }
+  .footer-rss:hover {
+    transform: scale(1.2);
+    transition: 1s;
+    filter: invert(26%) sepia(15%) saturate(638%) hue-rotate(7deg) brightness(92%)  contrast(87%);
+  }
+  /* Footer styles end */
