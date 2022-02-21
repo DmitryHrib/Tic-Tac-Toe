@@ -8,6 +8,7 @@ let step = false;
 let body = document.querySelector('body');
 let Lannisters = `<img src="./img/248px-Lannsiter.png" alt="Lan" class="img">`;
 let Starks = `<img src="./img/1486993233160937729.png" alt="Stark" class="img">`;
+let arr = [];
 
 function stepCross(target) {
     target.innerHTML = Lannisters;
@@ -70,6 +71,8 @@ function win() {
             }, 500);
             body.classList.add('body_Lannister')
             mainArea.removeEventListener('click', init);
+            localStorage.setItem('results1', 'Lannisters');
+            return arr.unshift('Lannisters');
         }
 
         else if (fields[comb[i][0]].classList.contains('o') &&
@@ -80,19 +83,21 @@ function win() {
                 fields[comb[i][1]].classList.add('active');
                 fields[comb[i][2]].classList.add('active');
                 res.innerHTML = 'Winner Starks!';
-                res1.innerHTML = `Тumber of moves:${count}`;
-                
+                res1.innerHTML = `Тumber of moves:${count}`;                
             }, 500);
             body.classList.add('body_Stark')
             mainArea.removeEventListener('click', init);
+            localStorage.setItem('results2', 'Starks');
+            return arr.unshift('Starks');
         }
 
         else if (count === 9) {
             res.innerText = 'Draw!';
             mainArea.removeEventListener('click', init);
-        }
-    }
+            localStorage.setItem('results3', 'draw');
+            let sort = arr.unshift('Draw');
+        }        
+    }    
 }
-
 btnGame.addEventListener('click', newGame);
 mainArea.addEventListener('click', init);
