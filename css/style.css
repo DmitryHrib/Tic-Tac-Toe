@@ -91,6 +91,7 @@ body {
     justify-content: center;
     align-items: center;
 }
+
 .main__area {  
     display: flex;
     flex-wrap: wrap;
