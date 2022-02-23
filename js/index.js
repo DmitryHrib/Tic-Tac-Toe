@@ -44,6 +44,7 @@ function newGame() {
     })
     mainArea.addEventListener('click', init)
 }
+///Функция победы
 function win() {
     const comb = [
         [0,1,2],
