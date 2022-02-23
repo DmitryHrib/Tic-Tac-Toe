@@ -9,7 +9,7 @@ let body = document.querySelector('body');
 let Lannisters = `<img src="./img/248px-Lannsiter.png" alt="Lan" class="img">`;
 let Starks = `<img src="./img/1486993233160937729.png" alt="Stark" class="img">`;
 let arr = [];
-
+////Ход ланистеров
 function stepCross(target) {
     target.innerHTML = Lannisters;
     let audio = new Audio('./audio/mech.mp3');
@@ -17,6 +17,7 @@ function stepCross(target) {
     target.classList.add('x');
     count++;
 }
+////Ход Старков
 function stepZero(target) {
     target.innerHTML = Starks;
     let audio = new Audio('./audio/mech.mp3');
@@ -24,14 +25,12 @@ function stepZero(target) {
     target.classList.add('o');
     count++;
 }
-
 function init(e) {
     if (!step) stepCross(e.target);
     else stepZero(e.target);
     step = !step;
     win();
 }
-
 function newGame() {
     step = false;
     count = 0;
@@ -45,7 +44,6 @@ function newGame() {
     })
     mainArea.addEventListener('click', init)
 }
-
 function win() {
     const comb = [
         [0,1,2],
@@ -57,7 +55,6 @@ function win() {
         [0,4,8],
         [2,4,6]
     ];
-
     for (let i = 0; i < comb.length; i++) {
         if (fields[comb[i][0]].classList.contains('x') &&
             fields[comb[i][1]].classList.contains('x') && 
@@ -74,7 +71,6 @@ function win() {
             localStorage.setItem('results1', 'Lannisters');
             return arr.unshift('Lannisters');
         }
-
         else if (fields[comb[i][0]].classList.contains('o') &&
             fields[comb[i][1]].classList.contains('o') && 
             fields[comb[i][2]].classList.contains('o')) {
@@ -90,7 +86,6 @@ function win() {
             localStorage.setItem('results2', 'Starks');
             return arr.unshift('Starks');
         }
-
         else if (count === 9) {
             res.innerText = 'Draw!';
             mainArea.removeEventListener('click', init);
